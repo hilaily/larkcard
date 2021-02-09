@@ -1,6 +1,6 @@
 package larkcard
 
-func Create(config *Config, header *Header, modules ...IModule) *Card {
+func New(config *Config, header *Header, modules ...IModule) *Card {
 	c := &Card{
 		Header: header,
 		Config: config,
@@ -9,7 +9,9 @@ func Create(config *Config, header *Header, modules ...IModule) *Card {
 	return c
 }
 
-func CreateI18n(config *Config, header *Header, modules map[string][]IModule) *Card {
+// NewI18n
+// Reference https://open.feishu.cn/document/ukTMukTMukTM/uEjNwUjLxYDM14SM2ATN
+func NewI18n(config *Config, header *Header, modules map[string][]IModule) *Card {
 	c := &Card{
 		Header: header,
 		Config: config,
@@ -18,7 +20,7 @@ func CreateI18n(config *Config, header *Header, modules map[string][]IModule) *C
 	return c
 }
 
-func CreateByMD(config *Config, header *Header, mdContent string, href *OURL) *Card {
+func NewByMD(config *Config, header *Header, mdContent string, href *OURL) *Card {
 	c := &Card{
 		Header: header,
 		Config: config,

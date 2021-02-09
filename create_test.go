@@ -5,8 +5,19 @@ import (
 	"testing"
 )
 
+func TestCreateHeader(t *testing.T) {
+	h := NewHeader("my header").SetI18n(map[string]string{
+		"zh_cn": "中文文本",
+		"en_us": "English text",
+		"ja_jp": "日本語文案",
+	})
+
+	h = NewHeader("my header").SetColor(HeaderBlue)
+	fmt.Println(h)
+}
+
 func TestCreateCard(t *testing.T) {
-	c := Create(
+	c := New(
 		nil,
 		NewHeader("test header").SetColor(HeaderGreen),
 		NewModContent("[飞书](https://www.feishu.cn)整合即时沟通、日历、音视频会议、云文档、云盘、工作台等功能于一体，成就组织和个人，更高效、更愉悦。", true),
